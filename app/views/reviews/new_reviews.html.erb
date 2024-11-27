@@ -1,5 +1,9 @@
+<h1>Add a Review for <%= @restaurant.name %></h1>
+
 <%= simple_form_for [@restaurant, @review] do |f| %>
-  <%= f.input :content %>
-  <%= f.input :rating %>
-  <%= f.submit 'Add Review', class: 'btn btn-primary' %>
+  <%= f.input :content, label: "Review Content", input_html: { rows: 5, class: 'form-control' } %>
+  <%= f.input :rating, label: "Rating", as: :select, collection: (0..5).to_a, include_blank: false, input_html: { class: 'form-select' } %>
+  <%= f.button :submit, class: 'btn btn-primary' %>
 <% end %>
+
+<%= link_to 'Back to Restaurant', restaurant_path(@restaurant), class: 'btn btn-secondary' %>

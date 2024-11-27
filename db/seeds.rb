@@ -9,3 +9,4 @@ Restaurant.destroy_all
     category: %w[chinese italian japanese french belgian].sample
   )
 end
+
